@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Twitch Chat</title>
+
+    <!-- Load ComfyJS script -->
+    <script src="https://cdn.jsdelivr.net/npm/comfy.js@latest/dist/comfy.min.js"></script>
 </head>
 <body>
     <div id = "chat">
@@ -15,4 +18,13 @@
     </div>
     
 </body>
+
+<!-- Script definition -->
+<script>
+    ComfyJS.onChat = (user, message, flags, self, extra) => {
+        console.log(user, message);
+    }
+
+    ComfyJS.Init("amsyarzero");
+</script>
 </html>
