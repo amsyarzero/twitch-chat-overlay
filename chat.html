@@ -21,8 +21,20 @@
 
 <!-- Script definition -->
 <script>
+    var chat = document.querySelector("#chat>ul");
+
     ComfyJS.onChat = (user, message, flags, self, extra) => {
-        console.log(user, message);
+        // create elements
+        var newMsg = document.createElement("li");
+        var msgContent = document.createElement("blockquote");
+
+        // define element contents
+        newMsg.innerText = user;
+        msgContent.innerText = message;
+
+        // append
+        newMsg.append(msgContent);
+        chat.append(newMsg);
     }
 
     ComfyJS.Init("amsyarzero");
